@@ -1,4 +1,4 @@
-package es.fercbrt.srpingbooterrorshandler.controller.service;
+package es.fercbrt.srpingbooterrorshandler.service;
 
 import es.fercbrt.srpingbooterrorshandler.models.User;
 

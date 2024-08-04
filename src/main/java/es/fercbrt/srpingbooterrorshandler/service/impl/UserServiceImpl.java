@@ -1,6 +1,6 @@
-package es.fercbrt.srpingbooterrorshandler.controller.service.impl;
+package es.fercbrt.srpingbooterrorshandler.service.impl;
 
-import es.fercbrt.srpingbooterrorshandler.controller.service.UserService;
+import es.fercbrt.srpingbooterrorshandler.service.UserService;
 import es.fercbrt.srpingbooterrorshandler.models.User;
 import org.springframework.stereotype.Service;
 
