@@ -10,7 +10,9 @@ public class AppController {
     @GetMapping
     String index() {
         // This will throw an ArithmeticException
-        int value = 100 / 0;
+        //int value = 100 / 0;
+        // This will throw a NumberFormatException
+        int value = Integer.parseInt("abc");
         return "Hello World!";
     }
 }
