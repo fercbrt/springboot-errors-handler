@@ -13,9 +13,9 @@ public class UserServiceImpl implements UserService {
 
     public UserServiceImpl() {
         users = List.of(
-            new User(1L, "John", "Doe"),
-            new User(2L, "Jane", "Doe"),
-            new User(3L, "Alice", "Smith")
+            new User(1L, "John", "Doe", null),
+            new User(2L, "Jane", "Doe", null),
+            new User(3L, "Alice", "Smith", null)
         );
     }
 
