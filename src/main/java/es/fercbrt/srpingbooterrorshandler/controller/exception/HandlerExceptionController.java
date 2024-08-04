@@ -7,7 +7,6 @@ import org.springframework.web.bind.annotation.RestControllerAdvice;
 import org.springframework.web.servlet.NoHandlerFoundException;
 
 import java.util.Date;
-import java.util.Map;
 
 @RestControllerAdvice
 public class HandlerExceptionController {
@@ -27,6 +26,12 @@ public class HandlerExceptionController {
     @ExceptionHandler(NumberFormatException.class)
     public ResponseEntity<Error> handleNumberFormatException(NumberFormatException e) {
         Error error = new Error("Invalid number format", e.getMessage(), 400, new Date());
+        return ResponseEntity.badRequest().body(error);
+    }
+
+    @ExceptionHandler(NullPointerException.class)
+    public ResponseEntity<Error> handleNullPointerException(NullPointerException e) {
+        Error error = new Error("Null pointer exception", e.getMessage(), 400, new Date());
         return ResponseEntity.badRequest().body(error);
     }
 }
