@@ -9,6 +9,8 @@ import org.springframework.web.bind.annotation.RestController;
 public class AppController {
     @GetMapping
     String index() {
+        // This will throw an ArithmeticException
+        int value = 100 / 0;
         return "Hello World!";
     }
 }
