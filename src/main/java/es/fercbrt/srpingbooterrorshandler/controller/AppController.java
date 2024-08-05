@@ -1,6 +1,7 @@
 package es.fercbrt.srpingbooterrorshandler.controller;
 
 import es.fercbrt.srpingbooterrorshandler.models.User;
+import es.fercbrt.srpingbooterrorshandler.models.UserNotFoundException;
 import es.fercbrt.srpingbooterrorshandler.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -31,6 +32,10 @@ public class AppController {
 
     @GetMapping("/users/{id}")
     ResponseEntity<User> getUser(@PathVariable Long id) {
-        return ResponseEntity.ok(userService.findById(id));
+        User user = userService.findById(id);
+        if (user == null) {
+            throw new UserNotFoundException("User not found with id: " + id);
+        }
+        return ResponseEntity.ok(user);
     }
 }
